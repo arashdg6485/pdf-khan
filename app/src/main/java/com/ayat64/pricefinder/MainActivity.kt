@@ -24,6 +24,7 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import androidx.compose.ui.platform.LocalLayoutDirection
 
 class MainActivity : ComponentActivity() {
     private lateinit var repo: PriceRepository
