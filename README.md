@@ -27,3 +27,6 @@ APK خروجی:
 
 ## ساخت محلی
 Android Studio این پروژه را باز می‌کند. همچنین Gradle wrapper در پروژه قرار داده شده تا GitHub بدون نصب Gradle جداگانه build کند.
+
+
+Build fix: Java and Kotlin JVM targets are both set to 17 for Gradle/Kotlin compatibility.

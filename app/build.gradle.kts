@@ -15,6 +15,16 @@ android {
         versionName = "1.0.0"
     }
 
+    // Keep Java and Kotlin bytecode targets consistent for GitHub Actions.
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+
     buildFeatures { buildConfig = true }
 
     packaging {
