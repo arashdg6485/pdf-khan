@@ -124,8 +124,7 @@ class PriceRepository(private val context: android.content.Context) {
 @Composable
 private fun PriceFinderScreen(repo: PriceRepository, onAdd: () -> Unit) {
     var query by remember { mutableStateOf("") }
-    val results = remember(query, repo.allProducts) {
-        SmartSearch.search(repo.allProducts, query).take(100)
+    val results = SmartSearch.search(repo.allProducts, query).take(100)
     }
 
     CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
