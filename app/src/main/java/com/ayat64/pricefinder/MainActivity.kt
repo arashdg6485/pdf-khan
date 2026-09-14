@@ -17,6 +17,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.unit.LocalLayoutDirection
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.Dispatchers
@@ -117,6 +119,7 @@ class PriceRepository(private val context: android.content.Context) {
         }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun PriceFinderScreen(repo: PriceRepository, onAdd: () -> Unit) {
     var query by remember { mutableStateOf("") }
@@ -124,7 +127,7 @@ private fun PriceFinderScreen(repo: PriceRepository, onAdd: () -> Unit) {
         SmartSearch.search(repo.allProducts, query).take(100)
     }
 
-    CompositionLocalProvider(LocalLayoutDirection provides androidx.compose.ui.unit.LayoutDirection.Rtl) {
+    CompositionLocalProvider(LocalLayoutDirection provides LayoutDirection.Rtl) {
         Scaffold(
             topBar = {
                 TopAppBar(

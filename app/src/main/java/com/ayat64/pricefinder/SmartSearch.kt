@@ -64,6 +64,6 @@ object SmartSearch {
             for (j in prev.indices) prev[j] = cur[j]
         }
         val dist = prev[b.length]
-        1.0 - dist.toDouble() / maxOf(a.length,b.length)
+        return 1.0 - dist.toDouble() / maxOf(a.length,b.length)
     }
 }
